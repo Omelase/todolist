@@ -1,15 +1,15 @@
 //양창덕님
 
 const todoInputElem = document.querySelector('.todo-input'); // selectors는 document 전체에서 일치하는 엘리먼트를 갖고 오고 이후 이 엘리먼트를 이용하여 자손 엘리먼트를 다시 가져올 수 있다
-const todoListElem = document.querySelector('.todo-list');
-const completeAllBtnElem = document.querySelector('.complete-all-btn');
-const leftItemsElem = document.querySelector('.left-items');
-const showAllBtnElem = document.querySelector('.show-all-btn');
-const showActiveBtnElem = document.querySelector('.show-active-btn');
-const showCompletedBtnElem = document.querySelector('.show-completed-btn');
-const clearCompletedBtnElem = document.querySelector('.clear-completed-btn');
+const todoListElem = document.querySelector('.todo-list'); // todo 리스트들 
+const completeAllBtnElem = document.querySelector('.complete-all-btn'); // 전체선택하기 버튼
+const leftItemsElem = document.querySelector('.left-items'); // 해야할일 수
+const showAllBtnElem = document.querySelector('.show-all-btn'); // 모든 목록 리스트
+const showActiveBtnElem = document.querySelector('.show-active-btn'); // 해야할일 리스트
+const showCompletedBtnElem = document.querySelector('.show-completed-btn'); //  완료 리스트목록
+const clearCompletedBtnElem = document.querySelector('.clear-completed-btn'); // 완료 리스트 지우기
 
-let id = 0; // Id 를 1씩 증가시켜 다른 아이디를 가지게한다
+let id = 0; // 새로운 todo에 Id 를 1씩 증가시켜 다른 아이디를 가지게한다
 const setId = (newId) => {
   id = newId;
 };
