@@ -6,7 +6,9 @@ body {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
-  background-color: black;
+  /* background-color: black; */
+  background-image: url(../images/bgimg.jpg);
+  background-position: 100% 100%;
   min-height: 100%;
 }
 
