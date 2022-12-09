@@ -157,7 +157,7 @@ const clearCompletedTodos = () => {
 };
 
 //이예찬
-//이예찬
+
 //paintTodo 변수 선언 후 arrow function 할당
 // todo를 parameter로 설정
 const paintTodo = (todo) => {
