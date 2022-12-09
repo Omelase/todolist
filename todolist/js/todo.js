@@ -157,27 +157,56 @@ const clearCompletedTodos = () => {
 };
 
 //이예찬
-
+//이예찬
+//paintTodo 변수 선언 후 arrow function 할당
+// todo를 parameter로 설정
 const paintTodo = (todo) => {
+  // todoItemElem 변수 선언 후 createElement(태그명) 함수로 li태그만들어 할당
   const todoItemElem = document.createElement('li');
+  // classList()함수 이용해 todoItemElem에 todo-item 클래스 속성 추가
+  // todo-item 클래스 속성을 추가하면 css내 설정들 적용됨
+  // 인풋창에 입력하면 아래 추가되는 기능!
   todoItemElem.classList.add('todo-item');
 
+  // setAttribute(속성명, 속성값) 함수는 선택한 요소의 속성값을 정하는 함수
+  // todoItemElem에 data-id라는 속성을 추가해 todo.id라는 이름을 붙인다.
+  //이후 todoItemElem은 todo.id로 호출 가능
   todoItemElem.setAttribute('data-id', todo.id);
 
+  //checkboxElem 변수 선언
+  //div태그 만들어 할당
   const checkboxElem = document.createElement('div');
+  //checkboxElem에 checkbox 클래스 추가
+  //사용자가 작성한 todolist 옆 체크 박스를 의미
   checkboxElem.classList.add('checkbox');
+  //checkboxElem을 이벤트리스너에 추가
+  //클릭하면 아래 arrow function실행하고 arrow function은 completeTodo 함수에 todo.id라는 인자 전달 (completeTodo함수는 위에서 이미 선언)
+  //체크박스 클릭하면 작성한 todolist를 완료한 리스트에 추가하는 듯
   checkboxElem.addEventListener('click', () => completeTodo(todo.id));
 
+  // todoElem 변수 선언
+  // div태그 만들어 할당
   const todoElem = document.createElement('div');
+  // todoElem에 todo 클래스 추가
+  // todo는 todo-item 목록 안 글을 의미
   todoElem.classList.add('todo');
+  // todoElem을 더블클릭하면 이벤트 발생
+  //더블클릭하면 event를 인자로 받는 함수 실행하여 onDbclickTodo함수에 event와 todo.id(작성한 목록)를 인자로 전달해 실행(onDbclickTodo함수는 위에서 이미 선언)
+  // onDbclickTodo함수는 이미 작성한 todolist를 수정하는 역할인 듯
   todoElem.addEventListener('dblclick', (event) =>
     onDbclickTodo(event, todo.id)
   );
+  // todoElem(작성한 글)의 텍스트를 todo.content로 채움
   todoElem.innerText = todo.content;
 
+  // delBtnElem 변수 선언
+  // button요소 할당
   const delBtnElem = document.createElement('button');
+  // delBtn 클래스 추가
   delBtnElem.classList.add('delBtn');
+  // 삭제버튼 클릭하면 deleteTodo함수에 todo.id(작성한 목록)전달
   delBtnElem.addEventListener('click', () => deleteTodo(todo.id));
+  // delBtnElem을 X로 채움
   delBtnElem.innerHTML = 'X';
 
   if (todo.isCompleted) {
