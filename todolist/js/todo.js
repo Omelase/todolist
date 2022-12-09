@@ -1,6 +1,6 @@
 //양창덕님
 
-const todoInputElem = document.querySelector('.todo-input');
+const todoInputElem = document.querySelector('.todo-input'); // selectors는 document 전체에서 일치하는 엘리먼트를 갖고 오고 이후 이 엘리먼트를 이용하여 자손 엘리먼트를 다시 가져올 수 있다
 const todoListElem = document.querySelector('.todo-list');
 const completeAllBtnElem = document.querySelector('.complete-all-btn');
 const leftItemsElem = document.querySelector('.left-items');
@@ -9,7 +9,7 @@ const showActiveBtnElem = document.querySelector('.show-active-btn');
 const showCompletedBtnElem = document.querySelector('.show-completed-btn');
 const clearCompletedBtnElem = document.querySelector('.clear-completed-btn');
 
-let id = 0;
+let id = 0; // Id 를 1씩 증가시켜 다른 아이디를 가지게한다
 const setId = (newId) => {
   id = newId;
 };
@@ -22,12 +22,12 @@ const setIsAllCompleted = (bool) => {
 let currentShowType = 'all'; // all  | active | complete
 const setCurrentShowType = (newShowType) => (currentShowType = newShowType);
 
-let todos = [];
+let todos = []; // 새로 저장될 todos 배열
 const setTodos = (newTodos) => {
   todos = newTodos;
 };
 
-const getAllTodos = () => {
+const getAllTodos = () => { //추가할 배열을 이전 todos배열에 추가하여 newTodos에 저장한다
   return todos;
 };
 const getCompletedTodos = () => {
