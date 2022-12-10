@@ -87,7 +87,7 @@ button {
 }
 
 .todo-item:hover .delBtn {
-  opacity: 1;
+  opacity: 0.5;
 }
 
 .checkbox {
