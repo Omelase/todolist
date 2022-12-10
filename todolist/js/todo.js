@@ -275,6 +275,7 @@ const paintTodos = () => {
 };
 
 // onClickShowTodosType변수 선언 및 e를 인자로 받는 아래 애로우 함수 할당
+// 클릭하면 해당하는 버튼의 타입 목록을 보여줌
 const onClickShowTodosType = (e) => {
   // currentBtnEle변수 선언 및 e.target 할당
   const currentBtnElem = e.target;
