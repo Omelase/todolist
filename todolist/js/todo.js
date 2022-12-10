@@ -32,7 +32,7 @@ const getAllTodos = () => {
   return todos;
 };
 const getCompletedTodos = () => { // 완료한 일 을 isCompleted 와 비교해 같다면 완료 리스트에 추가
-  return todos.filter((todo) => todo.isCompleted === true);
+  return todos.filter((todo) => todo.isCompleted === true); // filter 메서드는 주어진 함수의 테스트를 통과하는 모든 요소를 모아 새로운 배열로 반환합니다.
 };
 const getActiveTodos = () => { // isCompleted 와 다르다면 할일 리스트에 추가
   return todos.filter((todo) => todo.isCompleted === false);
@@ -53,8 +53,8 @@ const completeAll = () => { // check box 버튼을 클릭하면 getalltodos에 �
 };
 
 const incompleteAll = () => { // check box 버튼클릭시 complete 상태를 새로운 배열에 담아 iscomplete false로 바꿔 active배열에 추가한다 
-  completeAllBtnElem.classList.remove('checked'); // class 에 checked를 제거해 준다
-  const newTodos = getAllTodos().map((todo) => ({
+  completeAllBtnElem.classList.remove('checked'); // class 에 checked를 제거해 준다 // remove 함수는 선택한 요소를 제거할 때 사용하거나, 요소 내의 태그들을 삭제할 때 사용합니다
+  const newTodos = getAllTodos().map((todo) => ({ // map 메서드는 배열 내의 모든 요소 각각에 대하여 주어진 함수를 호출한 결과를 모아 새로운 배열을 반환합니다
     ...todo,
     isCompleted: false,
   }));
