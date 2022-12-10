@@ -30,20 +30,20 @@ const setTodos = (newTodos) => {
 const getAllTodos = () => { //추가할 배열을 이전 todos배열에 추가하여 newTodos에 저장한다
   return todos;
 };
-const getCompletedTodos = () => {
+const getCompletedTodos = () => { // 완료한 일 을 isCompleted 와 비교해 같다면 완료 리스트에 추가
   return todos.filter((todo) => todo.isCompleted === true);
 };
-const getActiveTodos = () => {
+const getActiveTodos = () => { // isCompleted 와 다르다면 할일 리스트에 추가
   return todos.filter((todo) => todo.isCompleted === false);
 };
 
-const setLeftItems = () => {
+const setLeftItems = () => { //  active 리스트의 개수 읽어 숫자로 표현해준다
   const leftTodos = getActiveTodos();
   leftItemsElem.innerHTML = `${leftTodos.length} items left`;
 };
 
-const completeAll = () => {
-  completeAllBtnElem.classList.add('checked');
+const completeAll = () => { // check box 버튼을 클릭하면 getalltodos에 있는 리스트들을 새로운 배열에 담아 iscomplete 로 추가해준다  
+  completeAllBtnElem.classList.add('checked'); // class 에 checked를 추가시켜 준다
   const newTodos = getAllTodos().map((todo) => ({
     ...todo,
     isCompleted: true,
@@ -51,8 +51,8 @@ const completeAll = () => {
   setTodos(newTodos);
 };
 
-const incompleteAll = () => {
-  completeAllBtnElem.classList.remove('checked');
+const incompleteAll = () => { // check box 버튼클릭시 complete 상태를 새로운 배열에 담아 iscomplete false로 바꿔 active배열에 추가한다 
+  completeAllBtnElem.classList.remove('checked'); // class 에 checked를 제거해 준다
   const newTodos = getAllTodos().map((todo) => ({
     ...todo,
     isCompleted: false,
@@ -61,13 +61,13 @@ const incompleteAll = () => {
 };
 
 // 전체 todos의 check 여부 (isCompleted)
-const checkIsAllCompleted = () => {
+const checkIsAllCompleted = () => { 
   if (getAllTodos().length === getCompletedTodos().length) {
     setIsAllCompleted(true);
-    completeAllBtnElem.classList.add('checked');
+    completeAllBtnElem.classList.add('checked'); //completeAll btn 클릭시 getALLTodos에 있는 리스트가 getCompletedTodos의 리스트 와 같으면 class아이디에 checked를 붙여 complete에 추가시킨다
   } else {
     setIsAllCompleted(false);
-    completeAllBtnElem.classList.remove('checked');
+    completeAllBtnElem.classList.remove('checked'); // 위 사항이 같지 false 라면 checked를 지워라 즉 active의 배열로 추가 시킨다
   }
 };
 
@@ -79,7 +79,7 @@ const onClickCompleteAll = () => {
   else completeAll(); // isAllCompleted가 false이면 todos를 전체 완료 처리
   setIsAllCompleted(!isAllCompleted); // isAllCompleted 토글
   paintTodos(); // 새로운 todos를 렌더링
-  setLeftItems();
+  setLeftItems(); // active 수를 렌더링
 };
 
 // 서길원님
