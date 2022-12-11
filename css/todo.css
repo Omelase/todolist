@@ -29,6 +29,7 @@ body {
   text-align: center;
   color: rgb(255, 255, 255);
   font-size: 7rem;
+  opacity: 0.8;
 }
 
 .todo-box {
