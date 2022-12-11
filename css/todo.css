@@ -34,6 +34,7 @@ body {
 .todo-box {
   background-color: white;
   border: 1px solid #ddd;
+  opacity: 0.6;
 }
 
 .todo-input-box {
